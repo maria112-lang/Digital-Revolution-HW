@@ -1,0 +1,90 @@
+CustomerID,CompanyName,Country,orders,first_order,last_order,lifetime_revenue,revenue_1997,days_since_last,avg_gap_days,overdue_ratio,status
+QUICK,QUICK-Stop,Germany,28,1996-08-05,1998-04-14,110277.3,61109.91,22,22.85,0.96,Active
+ERNSH,Ernst Handel,Austria,30,1996-07-17,1998-05-05,104874.98,48096.26,1,22.66,0.04,Active
+SAVEA,Save-a-lot Markets,USA,31,1996-10-08,1998-05-01,104361.95,57713.58,5,19.0,0.26,Active
+RATTC,Rattlesnake Canyon Grocery,USA,18,1996-07-22,1998-05-06,51097.8,19383.75,0,38.41,0.0,Active
+HUNGO,Hungry Owl All-Night Grocers,Ireland,19,1996-09-05,1998-04-30,49979.9,20454.4,6,33.44,0.18,Active
+HANAR,Hanari Carnes,Brazil,14,1996-07-08,1998-04-27,32841.37,6022.77,9,50.62,0.18,Active
+KOENE,Königlich Essen,Germany,14,1996-10-07,1998-04-16,30908.38,9664.21,20,42.77,0.47,Active
+FOLKO,Folk och fä HB,Sweden,19,1996-07-24,1998-04-27,29567.56,13314.67,9,35.67,0.25,Active
+WHITC,White Clover Markets,USA,14,1996-07-31,1998-05-01,27363.6,9146.5,5,49.15,0.1,Active
+FRANK,Frankenversand,Germany,15,1996-07-29,1998-04-09,26656.56,11829.78,27,44.21,0.61,Active
+QUEEN,Queen Cozinha,Brazil,13,1996-12-04,1998-05-04,25717.5,10132.77,2,43.0,0.05,Active
+SUPRD,Suprêmes délices,Belgium,12,1996-07-09,1998-04-21,24088.78,6137.48,15,59.18,0.25,Active
+PICCO,Piccolo und mehr,Austria,10,1996-11-13,1998-04-27,23128.86,9305.58,9,58.89,0.15,Active
+HILAA,HILARIÓN-Abastos,Venezuela,18,1996-07-16,1998-04-28,22768.76,13482.74,8,38.29,0.21,Active
+BONAP,Bon app',France,17,1996-10-16,1998-05-06,21963.25,11208.36,0,35.44,0.0,Active
+BOTTM,Bottom-Dollar Markets,Canada,14,1996-12-20,1998-04-24,20801.6,7630.25,12,37.69,0.32,Active
+RICSU,Richter Supermarkt,Switzerland,10,1996-07-12,1998-05-06,19343.78,11864.42,0,73.67,0.0,Active
+LEHMS,Lehmanns Marktstand,Germany,15,1996-08-13,1998-05-05,19261.41,13076.13,1,45.0,0.02,Active
+GREAL,Great Lakes Food Market,USA,11,1997-05-06,1998-04-30,18507.45,8565.32,6,35.9,0.17,Active
+SIMOB,Simons bistro,Denmark,7,1996-10-29,1998-05-06,16817.1,16232.41,0,92.33,0.0,Active
+LINOD,LINO-Delicateses,Venezuela,12,1997-01-06,1998-04-21,16476.56,7359.48,15,42.73,0.35,Active
+LILAS,LILA-Supermercado,Venezuela,14,1996-08-16,1998-05-05,16076.6,5175.2,1,48.23,0.02,Active
+VAFFE,Vaffeljernet,Denmark,11,1996-11-28,1998-04-02,15843.92,8960.12,34,49.0,0.69,Active
+WARTH,Wartian Herkku,Finland,15,1996-07-26,1998-04-15,15648.7,12262.94,21,44.86,0.47,Active
+OLDWO,Old World Delicatessen,USA,10,1996-07-19,1998-04-20,15271.11,5475.38,16,71.11,0.22,Active
+EASTC,Eastern Connection,UK,8,1996-11-26,1998-04-28,14761.04,4514.35,8,74.0,0.11,Active
+AROUT,Around the Horn,UK,13,1996-11-15,1998-04-10,13390.65,6406.9,26,42.58,0.61,Active
+RICAR,Ricardo Adocicados,Brazil,11,1996-08-22,1998-04-29,12450.8,4283.77,7,61.5,0.11,Active
+CHOPS,Chop-suey Chinese,Switzerland,8,1996-07-11,1998-04-22,12348.88,6516.4,14,92.86,0.15,Active
+GODOS,Godos Cocina Típica,Spain,10,1996-09-11,1998-04-21,11446.36,3458.35,15,65.22,0.23,Active
+SPLIR,Split Rail Beer & Ale,USA,9,1996-08-01,1998-03-25,11441.63,2475.0,42,75.12,0.56,Active
+OTTIK,Ottilies Käseladen,Germany,9,1997-01-07,1998-04-14,10991.55,8254.27,22,57.75,0.38,Active
+TORTU,Tortuga Restaurante,Mexico,10,1996-08-08,1998-05-04,10812.15,5523.35,2,70.44,0.03,Active
+MAISD,Maison Dewey,Belgium,7,1997-05-07,1998-04-07,9736.08,5297.0,29,55.83,0.52,Active
+WANDK,Die Wandernde Kuh,Germany,10,1996-09-09,1998-04-23,9588.42,4262.82,13,65.67,0.2,Active
+LAMAI,La maison d'Asie,France,14,1996-11-11,1998-04-27,9328.2,6923.87,9,40.92,0.22,Active
+TRADH,Tradição Hipermercados,Brazil,7,1996-07-05,1998-01-19,8714.06,1320.4,107,93.83,1.14,Active
+GOURL,Gourmet Lanchonetes,Brazil,9,1997-01-23,1998-04-24,8414.14,8008.78,12,57.0,0.21,Active
+MAGAA,Magazzini Alimentari Riuniti,Italy,10,1996-08-07,1998-03-16,7176.22,4695.88,51,65.11,0.78,Active
+REGGC,Reggiani Caseifici,Italy,12,1996-08-23,1998-04-30,7048.24,3000.84,6,55.91,0.11,Active
+ANTON,Antonio Moreno Taquería,Mexico,7,1996-11-27,1998-01-28,7023.98,5960.78,98,71.17,1.38,Active
+QUEDE,Que Delícia,Brazil,9,1996-07-19,1998-03-31,6664.81,3502.41,36,77.5,0.46,Active
+PRINI,Princesa Isabel Vinhos,Portugal,6,1996-10-23,1998-04-08,6455.94,1409.2,28,106.4,0.26,Active
+FURIB,Furia Bacalhau e Frutos do Mar,Portugal,8,1996-10-14,1998-03-19,6427.42,5065.32,48,74.43,0.64,Active
+ISLAT,Island Trading,UK,10,1996-09-26,1998-03-06,6146.3,2560.5,61,58.44,1.04,Active
+BSBEV,B's Beverages,UK,10,1996-08-26,1998-04-14,6089.9,3179.5,22,66.22,0.33,Active
+WELLI,Wellington Importadora,Brazil,9,1996-07-15,1998-03-09,6068.2,4415.15,58,75.25,0.77,Active
+SANTG,Santé Gourmet,Norway,6,1996-12-18,1998-04-10,5735.15,700.0,26,95.6,0.27,Active
+MORGK,Morgenstern Gesundkost,Germany,5,1996-08-09,1998-03-12,5042.2,3596.4,55,145.0,0.38,Active
+ALFKI,Alfreds Futterkiste,Germany,6,1997-08-25,1998-04-09,4273.0,2022.5,27,45.4,0.59,Active
+LONEP,Lonesome Pine Restaurant,USA,8,1996-09-17,1998-04-13,4258.6,1837.2,23,81.86,0.28,Active
+PERIC,Pericles Comidas clásicas,Mexico,6,1996-10-04,1998-05-05,4242.2,2065.4,1,115.6,0.01,Active
+BOLID,Bólido Comidas preparadas,Spain,3,1996-10-10,1998-03-24,4232.85,3026.85,43,265.0,0.16,Active
+COMMI,Comércio Mineiro,Brazil,5,1996-08-27,1998-04-22,3810.75,1128.0,14,150.75,0.09,Active
+DRACD,Drachenblut Delikatessen,Germany,6,1996-11-26,1998-05-04,3763.21,420.0,2,104.8,0.02,Active
+WILMK,Wilman Kala,Finland,8,1996-07-04,1998-04-07,3601.35,1174.35,29,91.71,0.32,Active
+WOLZA,Wolski  Zajazd,Poland,7,1996-12-05,1998-04-23,3531.95,1207.85,13,84.0,0.15,Active
+OCEAN,Océano Atlántico Ltda.,Argentina,5,1997-01-09,1998-03-30,3460.2,429.2,37,111.25,0.33,Active
+THEBI,The Big Cheese,USA,4,1996-09-20,1998-04-01,3361.0,2955.4,35,186.0,0.19,Active
+BLAUS,Blauer See Delikatessen,Germany,7,1997-04-09,1998-04-29,3239.8,1079.8,7,64.17,0.11,Active
+FRANR,France restauration,France,3,1997-09-17,1998-03-24,3172.16,920.1,43,94.0,0.46,Active
+LETSS,Let's Stop N Shop,USA,4,1997-06-25,1998-02-12,3076.47,1698.4,83,77.33,1.07,Active
+TOMSP,Toms Spezialitäten,Germany,5,1997-02-06,1998-03-23,2914.74,2004.34,44,102.5,0.43,Active
+RANCH,Rancho grande,Argentina,5,1997-02-17,1998-04-13,2844.1,1149.4,23,105.0,0.22,Active
+SPECD,Spécialités du monde,France,4,1997-11-12,1998-04-22,2423.35,52.35,14,53.67,0.26,Active
+THECR,The Cracker Box,USA,3,1997-08-07,1998-04-06,1947.24,1621.24,30,121.0,0.25,Active
+CACTU,Cactus Comidas para llevar,Argentina,6,1997-04-29,1998-04-28,1814.8,238.0,8,72.8,0.11,Active
+CONSH,Consolidated Holdings,UK,3,1997-02-04,1998-01-23,1719.1,787.6,103,176.5,0.58,Active
+DUMON,Du monde entier,France,4,1996-09-20,1998-02-16,1615.9,487.0,79,171.33,0.46,Active
+TRAIH,Trail's Head Gourmet Provisioners,USA,3,1997-06-19,1998-01-08,1571.2,1333.3,118,101.5,1.16,Active
+FRANS,Franchi S.p.A.,Italy,6,1997-01-22,1998-04-30,1545.7,249.7,6,92.6,0.06,Active
+ROMEY,Romero y tomillo,Spain,5,1996-08-14,1998-04-09,1467.29,0.0,27,150.75,0.18,Active
+ANATR,Ana Trujillo Emparedados y helados,Mexico,4,1996-09-18,1998-03-04,1402.95,799.75,63,177.33,0.36,Active
+VINET,Vins et alcools Chevalier,France,4,1996-08-06,1997-11-12,1040.0,379.8,175,154.33,1.13,Active
+GALED,Galería del gastrónomo,Spain,5,1996-11-28,1998-03-05,836.7,493.2,62,115.5,0.54,Active
+NORTS,North/South,UK,3,1997-04-24,1998-04-29,649.0,604.0,7,185.0,0.04,Active
+LAUGB,Laughing Bacchus Wine Cellars,Canada,3,1997-04-03,1998-01-01,522.5,335.5,125,136.5,0.92,Active
+MEREP,Mère Paillarde,Canada,13,1996-10-17,1997-10-30,28872.19,23332.31,188,31.5,5.97,At risk
+BLONP,Blondel père et fils,France,11,1996-07-25,1998-01-12,18534.08,7817.88,114,53.6,2.13,At risk
+FAMIA,Familia Arquibaldo,Brazil,7,1996-11-06,1997-10-31,4107.55,3127.13,187,59.83,3.13,At risk
+HUNGC,Hungry Coyote Import Store,USA,5,1996-12-06,1997-09-08,3063.2,2283.2,240,69.0,3.48,At risk
+LACOR,La corne d'abondance,France,4,1998-01-29,1998-03-24,1992.05,0.0,43,18.0,2.39,At risk
+GROSR,GROSELLA-Restaurante,Venezuela,2,1996-07-30,1997-12-18,1488.7,387.5,139,506.0,0.27,Under 3 orders
+LAZYK,Lazy K Kountry Store,USA,2,1997-03-21,1997-05-22,357.0,357.0,349,62.0,5.63,Under 3 orders
+CENTC,Centro comercial Moctezuma,Mexico,1,1996-07-18,1996-07-18,100.8,0.0,657,,,Under 3 orders
+BERGS,Berglunds snabbköp,Sweden,18,1996-08-12,1998-03-04,24927.58,13849.02,63,33.47,1.88,Watch
+SEVES,Seven Seas Imports,UK,9,1996-11-21,1998-02-04,16215.32,9021.24,91,55.0,1.65,Watch
+FOLIG,Folies gourmandes,France,5,1997-01-08,1997-12-22,11666.9,11666.9,135,87.0,1.55,Watch
+VICTE,Victuailles en stock,France,10,1996-07-08,1998-01-23,9182.43,5807.12,103,62.67,1.64,Watch

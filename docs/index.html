@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northwind Sales Analysis</title>
+  <meta name="description" content="Four business questions answered from the Northwind sales data: growth, customer concentration, discounts, and at-risk customers.">
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --text: #1f2328;
+      --muted: #5c6370;
+      --accent: #a31f34;
+      --accent-soft: #f6e8ea;
+      --card: #ffffff;
+      --border: #e4e2dc;
+      --good: #2f6db5;
+      --warn: #b86a00;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #16181c;
+        --text: #e8e6e3;
+        --muted: #a0a4ab;
+        --accent: #e06a7a;
+        --accent-soft: #2c1d21;
+        --card: #1e2126;
+        --border: #2e3238;
+        --good: #7aa7e0;
+        --warn: #e0a35a;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, sans-serif;
+    }
+    main { max-width: 860px; margin: 0 auto; padding: 48px 16px 64px; }
+    header { margin-bottom: 40px; }
+    .eyebrow {
+      color: var(--accent); font-weight: 600; font-size: 0.8rem;
+      letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 8px;
+    }
+    h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 12px; }
+    h2 { font-size: 1.45rem; line-height: 1.3; margin: 0 0 4px; }
+    h3 {
+      font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--muted); margin: 28px 0 6px;
+    }
+    p { margin: 0 0 12px; }
+    .lede { font-size: 1.1rem; color: var(--muted); }
+    a { color: var(--accent); }
+    .meta { font-size: 0.9rem; color: var(--muted); }
+
+    .summary {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px 24px; margin: 28px 0 0;
+    }
+    .summary h2 { font-size: 1.05rem; margin-bottom: 10px; }
+    .summary ol { margin: 0; padding-left: 20px; }
+    .summary li { margin-bottom: 6px; }
+    .summary a { text-decoration: none; }
+    .summary a:hover { text-decoration: underline; }
+
+    section.q {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px 28px 20px; margin: 32px 0;
+    }
+    .qnum {
+      display: inline-block; background: var(--accent); color: #fff;
+      font-weight: 700; font-size: 0.8rem; border-radius: 4px;
+      padding: 2px 8px; margin-bottom: 10px;
+    }
+    figure { margin: 8px 0 4px; }
+    figure img {
+      width: 100%; height: auto; display: block; background: #fff;
+      border: 1px solid var(--border); border-radius: 6px;
+    }
+    figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
+
+    .finding {
+      border-left: 4px solid var(--accent); background: var(--accent-soft);
+      padding: 12px 16px; border-radius: 0 6px 6px 0;
+    }
+    .finding p:last-child, .action p:last-child { margin-bottom: 0; }
+    .action {
+      border: 1px solid var(--border); border-radius: 6px;
+      padding: 12px 16px;
+    }
+    .action strong { color: var(--accent); }
+    ul.tight { margin: 0 0 12px; padding-left: 20px; }
+    ul.tight li { margin-bottom: 4px; }
+
+    .table-wrap { overflow-x: auto; margin: 12px 0 4px; }
+    table {
+      width: 100%; border-collapse: collapse; font-size: 0.88rem;
+      font-variant-numeric: tabular-nums;
+    }
+    th, td {
+      text-align: left; padding: 7px 10px;
+      border-bottom: 1px solid var(--border); white-space: nowrap;
+    }
+    th { color: var(--muted); font-weight: 600; font-size: 0.8rem; }
+    td.num, th.num { text-align: right; }
+    .tag {
+      font-size: 0.75rem; font-weight: 700; padding: 1px 7px;
+      border-radius: 10px; border: 1px solid currentColor;
+    }
+    .tag.risk { color: var(--accent); }
+    .tag.watch { color: var(--warn); }
+    .down { color: var(--accent); font-weight: 600; }
+
+    section.method { margin: 40px 0 0; }
+    section.method h2 { font-size: 1.2rem; margin-bottom: 10px; }
+    footer {
+      margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);
+      font-size: 0.9rem; color: var(--muted);
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.88em; background: var(--accent-soft);
+      padding: 1px 5px; border-radius: 4px;
+    }
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      main { padding-top: 32px; }
+      h1 { font-size: 1.7rem; }
+      section.q { padding: 20px 16px 12px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">15.561 Digital Revolution · Business analysis</p>
+    <h1>Northwind Traders: where growth comes from, and what puts it at risk</h1>
+    <p class="lede">Four questions for the sales and operations leadership of
+      Northwind Traders, answered with the company's own order data.</p>
+    <p class="meta">Maria Alejandra Garcia · Analysis code:
+      <a href="https://github.com/maria112-lang/Digital-Revolution-HW">github.com/maria112-lang/Digital-Revolution-HW</a></p>
+
+    <p>Northwind Traders is a specialty food distributor that sells to
+      grocery stores, restaurants, and importers. The dataset covers
+      <strong>830 orders</strong> (2,155 order lines) from <strong>89
+      customers in 21 countries</strong>, placed between <strong>4 July 1996
+      and 6 May 1998</strong>, across 77 products in 8 categories. Over that
+      period the company booked <strong>$1.27 million</strong> in net revenue.</p>
+    <p>This page is written for a <strong>sales or general manager</strong>
+      deciding where to put inventory, attention, and pricing effort next
+      quarter. Each section states the question, why it matters, how it was
+      answered, the evidence, and a concrete recommendation.</p>
+
+    <div class="summary">
+      <h2>The short version</h2>
+      <ol>
+        <li><a href="#q1">Revenue more than doubled (+121%)</a>, and three
+          categories (Beverages, Dairy, Seafood) delivered 65% of the growth.</li>
+        <li><a href="#q2">18 customers (20%) bring in 60% of revenue</a>;
+          the top 3 alone bring in 25%. One top-10 account has gone silent.</li>
+        <li><a href="#q3">A 1–5% discount sells as many units as a 25%
+          discount.</a> Discounts above 5% gave away $58K with no extra
+          volume.</li>
+        <li><a href="#q5">Nine repeat customers are overdue</a> for their
+          next order. Together they spent $77K in 1997.</li>
+      </ol>
+    </div>
+  </header>
+
+  <!-- Q1 -->
+  <section class="q" id="q1">
+    <span class="qnum">Q1</span>
+    <h2>Where is revenue growth coming from, and where should we put
+      inventory and supplier capacity?</h2>
+
+    <h3>Why it matters</h3>
+    <p>Revenue is climbing fast. If the categories driving that growth run
+      out of stock or their suppliers can't keep up, the growth stalls. A
+      manager needs to know which categories to secure supply for first.</p>
+
+    <h3>Analytical approach</h3>
+    <p>Net revenue per order line (price × quantity × (1 − discount)) was
+      summed by month and by product category. To compare like with like,
+      January–April 1998 is set against January–April 1997. May 1998 is
+      excluded because the data stops on 6 May. Categories are ranked by
+      <em>dollars added</em> rather than percent growth, so a small category
+      with a big percentage doesn't look more important than it is.</p>
+
+    <figure>
+      <a href="figures/q1_growth.png"><img src="figures/q1_growth.png" alt="Left: line chart of monthly net revenue from about $28K in July 1996 to $124K in April 1998, with the Jan–Apr comparison windows shaded. Right: bar chart of revenue added by category, led by Beverages (+$69.5K), Dairy Products (+$47.4K) and Seafood (+$32.4K)."></a>
+      <figcaption>Monthly net revenue (left) and revenue added by category,
+        Jan–Apr 1998 vs Jan–Apr 1997 (right). Labels show dollars added and
+        percent growth.</figcaption>
+    </figure>
+
+    <h3>Main finding</h3>
+    <div class="finding">
+      <p>Net revenue for January–April rose from <strong>$191,322 in 1997 to
+        $422,290 in 1998 (+120.7%)</strong>. Every category grew, but
+        <strong>Beverages (+$69.5K, +164%), Dairy Products (+$47.4K, +157%)
+        and Seafood (+$32.4K, +285%) produced 65% of the increase.</strong>
+        Grains/Cereals grew least (+$6.0K, +32%).</p>
+    </div>
+
+    <h3>Business implication</h3>
+    <div class="action">
+      <p><strong>Recommendation:</strong> lock in supply for Beverages,
+        Dairy and Seafood before the next quarter. Negotiate volume
+        commitments with those categories' suppliers and raise their reorder
+        levels so stock-outs don't cap growth. Review Grains/Cereals for
+        range or pricing problems before putting more inventory behind it.</p>
+    </div>
+  </section>
+
+  <!-- Q2 -->
+  <section class="q" id="q2">
+    <span class="qnum">Q2</span>
+    <h2>How dependent are we on a few customers, and are those key accounts
+      growing or slipping?</h2>
+
+    <h3>Why it matters</h3>
+    <p>If a few customers carry the business, losing one is a serious hit to
+      revenue. Knowing how concentrated revenue is tells a manager where
+      account-management time is worth the most, and spotting a key account
+      that is slipping gives time to act.</p>
+
+    <h3>Analytical approach</h3>
+    <p>Customers were ranked by lifetime net revenue and their cumulative
+      share plotted (a Pareto curve). For the 10 largest customers,
+      January–April 1998 revenue was compared with January–April 1997 to see
+      whether each one is growing or shrinking.</p>
+
+    <figure>
+      <a href="figures/q2_pareto.png"><img src="figures/q2_pareto.png" alt="Pareto curve: cumulative share of net revenue against percent of customers. The top 20% of customers (18) account for 60% of revenue; a dashed diagonal shows equal revenue per customer."></a>
+      <figcaption>Cumulative share of net revenue by customer rank. The
+        further the curve bows above the diagonal, the more concentrated
+        revenue is.</figcaption>
+    </figure>
+    <figure>
+      <a href="figures/q2_top10_trend.png"><img src="figures/q2_top10_trend.png" alt="Paired bar chart of the top 10 customers' Jan–Apr revenue in 1997 and 1998. Nine grew; Mère Paillarde had about $10.4K in Jan–Apr 1997 and no orders in Jan–Apr 1998."></a>
+      <figcaption>Top 10 customers by lifetime revenue: Jan–Apr 1997 (grey)
+        vs Jan–Apr 1998 (blue).</figcaption>
+    </figure>
+
+    <h3>Main finding</h3>
+    <div class="finding">
+      <p><strong>The top 20% of customers (18 of 89) bring in 60.1% of net
+        revenue</strong>, and 34 customers make up 80%. The top three,
+        <strong>QUICK-Stop ($110K), Ernst Handel ($105K) and Save-a-lot
+        Markets ($104K), bring in 25.2% between them</strong>, about 8% each.
+        Nine of the top 10 grew in Jan–Apr 1998. The exception is
+        <strong>Mère Paillarde (#9, $28.9K lifetime)</strong>: $10.4K in
+        Jan–Apr 1997, <span class="down">no orders at all in 1998</span>.</p>
+    </div>
+
+    <h3>Business implication</h3>
+    <div class="action">
+      <p><strong>Recommendation:</strong> set up a key-account program for
+        the top 3 customers: a named account manager, quarterly business
+        reviews, and priority allocation of fast-growing stock. Any one of
+        them leaving would cost about 8% of revenue. <strong>Call Mère
+        Paillarde this week</strong> to find out why they stopped ordering
+        (see Q5).</p>
+    </div>
+  </section>
+
+  <!-- Q3 -->
+  <section class="q" id="q3">
+    <span class="qnum">Q3</span>
+    <h2>Do discounts actually sell more, or do they just give away
+      revenue?</h2>
+
+    <h3>Why it matters</h3>
+    <p>39% of order lines carry a discount, of up to 25%. Every discount point
+      comes straight out of revenue. If deeper discounts don't sell more
+      units, a simple cap is the easiest revenue a manager will ever
+      recover.</p>
+
+    <h3>Analytical approach</h3>
+    <p>Order lines were grouped into discount bands and the average units per
+      line compared, with 95% confidence intervals. To rule out product mix
+      (cheap, high-volume products might simply be discounted more often),
+      discounted and full-price lines were also compared <em>within the same
+      product</em>. Revenue given up is the difference between each line's
+      value before discount and what was actually charged. The portion
+      above a 5% discount was calculated separately.</p>
+
+    <figure>
+      <a href="figures/q3_discounts.png"><img src="figures/q3_discounts.png" alt="Bar chart of average units per order line by discount band: 0% = 21.7 units, 1–5% = 27.1, 6–10% = 25.1, 11–15% = 28.4, 16–20% = 27.0, 21–25% = 28.2, with overlapping 95% confidence intervals for all discounted bands."></a>
+      <figcaption>Average units per order line by discount band. Error bars
+        show 95% confidence intervals; n = number of order lines.</figcaption>
+    </figure>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Discount</th><th class="num">Order lines</th>
+            <th class="num">Avg units</th><th class="num">Median units</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0%</td><td class="num">1,317</td><td class="num">21.7</td><td class="num">18</td></tr>
+          <tr><td>1–5%</td><td class="num">192</td><td class="num">27.1</td><td class="num">20</td></tr>
+          <tr><td>6–10%</td><td class="num">174</td><td class="num">25.1</td><td class="num">20</td></tr>
+          <tr><td>11–15%</td><td class="num">157</td><td class="num">28.4</td><td class="num">21</td></tr>
+          <tr><td>16–20%</td><td class="num">161</td><td class="num">27.0</td><td class="num">21</td></tr>
+          <tr><td>21–25%</td><td class="num">154</td><td class="num">28.2</td><td class="num">25</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Main finding</h3>
+    <div class="finding">
+      <p>Discounted lines do sell more: <strong>27.1 units on average against
+        21.7 at full price</strong> (+25%). The lift holds within the same
+        product (+4.6 units; 70% of products sell more when discounted).
+        <strong>But the size of the discount barely matters: lines at 1–5%
+        average 27.1 units, the same as lines above 5% (27.1).</strong>
+        Discounts cost <strong>$88,666</strong> in total (6.5% of gross
+        revenue), and <strong>$58,484 of that is the portion above
+        5%</strong>, spread over 646 order lines.</p>
+      <p class="meta">Caveat: this shows correlation, not cause. Sales reps
+        may offer discounts to customers who were already placing large
+        orders.</p>
+    </div>
+
+    <h3>Business implication</h3>
+    <div class="action">
+      <p><strong>Recommendation:</strong> make <strong>5% the standard
+        maximum discount</strong>, and require manager approval for anything
+        deeper. Based on this period, that would recover about $58K, or
+        about 4.6% of net revenue, without losing volume. Run it as a
+        one-quarter test with a few sales reps first and track units per
+        order to confirm.</p>
+    </div>
+  </section>
+
+  <!-- Q5 -->
+  <section class="q" id="q5">
+    <span class="qnum">Q4</span>
+    <h2>Which customers are we at risk of losing?</h2>
+
+    <h3>Why it matters</h3>
+    <p>Customers rarely announce that they're leaving; they just stop
+      ordering. Catching a customer who is overdue against <em>their own</em>
+      usual ordering rhythm gives the sales team a chance to win them back
+      before the account is lost.</p>
+
+    <h3>Analytical approach</h3>
+    <p>For each customer with at least 3 orders, the average gap between
+      orders was compared with the days since their last order, as of the
+      last date in the data (6 May 1998). A customer is <strong>at
+      risk</strong> when the current gap is more than <strong>2×</strong>
+      their usual gap, and on the <strong>watch list</strong> at 1.5–2×.
+      Their 1997 revenue estimates the annual business at stake.</p>
+
+    <figure>
+      <a href="figures/q5_at_risk.png"><img src="figures/q5_at_risk.png" alt="Scatter plot of lifetime revenue against how overdue each repeat customer is. Most customers cluster below 1.5×. Five at-risk customers sit beyond the 2× line, led by Mère Paillarde at 6× and $28.9K; four watch-list customers sit between 1.5× and 2×."></a>
+      <figcaption>Each dot is a repeat customer. Further right means more
+        overdue relative to that customer's usual gap between orders; higher
+        means more valuable.</figcaption>
+    </figure>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Customer</th><th>Country</th><th>Status</th>
+            <th class="num">Days since last order</th>
+            <th class="num">Usual gap (days)</th>
+            <th class="num">Overdue</th>
+            <th class="num">1997 revenue</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mère Paillarde</td><td>Canada</td><td><span class="tag risk">At risk</span></td><td class="num">188</td><td class="num">32</td><td class="num">6.0×</td><td class="num">$23,332</td></tr>
+          <tr><td>Blondel père et fils</td><td>France</td><td><span class="tag risk">At risk</span></td><td class="num">114</td><td class="num">54</td><td class="num">2.1×</td><td class="num">$7,818</td></tr>
+          <tr><td>Familia Arquibaldo</td><td>Brazil</td><td><span class="tag risk">At risk</span></td><td class="num">187</td><td class="num">60</td><td class="num">3.1×</td><td class="num">$3,127</td></tr>
+          <tr><td>Hungry Coyote Import Store</td><td>USA</td><td><span class="tag risk">At risk</span></td><td class="num">240</td><td class="num">69</td><td class="num">3.5×</td><td class="num">$2,283</td></tr>
+          <tr><td>La corne d'abondance</td><td>France</td><td><span class="tag risk">At risk</span></td><td class="num">43</td><td class="num">18</td><td class="num">2.4×</td><td class="num">new in 1998</td></tr>
+          <tr><td>Berglunds snabbköp</td><td>Sweden</td><td><span class="tag watch">Watch</span></td><td class="num">63</td><td class="num">34</td><td class="num">1.9×</td><td class="num">$13,849</td></tr>
+          <tr><td>Folies gourmandes</td><td>France</td><td><span class="tag watch">Watch</span></td><td class="num">135</td><td class="num">87</td><td class="num">1.6×</td><td class="num">$11,667</td></tr>
+          <tr><td>Seven Seas Imports</td><td>UK</td><td><span class="tag watch">Watch</span></td><td class="num">91</td><td class="num">55</td><td class="num">1.7×</td><td class="num">$9,021</td></tr>
+          <tr><td>Victuailles en stock</td><td>France</td><td><span class="tag watch">Watch</span></td><td class="num">103</td><td class="num">63</td><td class="num">1.6×</td><td class="num">$5,807</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Main finding</h3>
+    <div class="finding">
+      <p><strong>5 repeat customers are at risk</strong>, together worth
+        $56,569 in lifetime revenue and <strong>$36,561 in 1997</strong>.
+        Another 4 are on the watch list ($40,344 in 1997), so
+        <strong>about $77K of annual business</strong> is overdue. The
+        standout is <strong>Mère Paillarde</strong>: it used to order every
+        32 days, but hasn't ordered in 188 days, and it was worth $23.3K in
+        1997. This is the same top-10 account that went silent in Q2.</p>
+    </div>
+
+    <h3>Business implication</h3>
+    <div class="action">
+      <p><strong>Recommendation:</strong> give this list to the sales team
+        as a win-back campaign this month. Account managers should call the
+        at-risk customers in order of 1997 revenue, starting with Mère
+        Paillarde and Blondel père et fils, ask what changed (price, service,
+        a competitor), and offer to restart with a first order at the
+        standard ≤5% discount from Q3. Re-run the check monthly so that
+        overdue accounts come up automatically.</p>
+    </div>
+  </section>
+
+  <section class="method" id="method">
+    <h2>Method, data quality and reproducibility</h2>
+    <ul class="tight">
+      <li><strong>Revenue</strong> = <code>UnitPrice × Quantity × (1 −
+        Discount)</code> per order line. It uses the price actually charged
+        on each order, not today's list price, and excludes freight.</li>
+      <li><strong>Cleaning:</strong> one freight value stored as text
+        (<code>"1,007.64"</code>) was converted to a number, and discount
+        rounding noise (e.g. 0.0500000007) was rounded to 2 decimals. 21
+        recent unshipped orders are included in revenue. All keys and table
+        joins were checked: no orphans, duplicates or impossible values.</li>
+      <li><strong>Verification:</strong> each question is computed with SQL
+        (Python <code>sqlite3</code>), then 15 key numbers are recomputed
+        independently with pandas on the raw data. All 15 match.</li>
+      <li><strong>Reproduce:</strong> all code is Python, in the
+        <a href="https://github.com/maria112-lang/Digital-Revolution-HW">GitHub
+        repository</a>. <code>python src/run_all.py</code> downloads the
+        data, rebuilds every chart and table, and runs the
+        verification.</li>
+    </ul>
+  </section>
+
+  <footer>
+    Built for 15.561 with an AI coding agent (Claude Code); all analysis code
+    is Python and documented with the course's python-docstrings skill.
+    Data: Northwind sample database.
+  </footer>
+</main>
+</body>
+</html>

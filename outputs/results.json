@@ -1,0 +1,392 @@
+{
+  "q1": {
+    "through_month": "1998-04",
+    "window": "Jan–Apr 1998 vs 1997",
+    "prior_revenue": 191321.88,
+    "current_revenue": 422290.24,
+    "total_growth_pct": 120.7,
+    "top3_categories": [
+      "Beverages",
+      "Dairy Products",
+      "Seafood"
+    ],
+    "top3_share_of_growth_pct": 64.6,
+    "by_category": [
+      {
+        "category": "Beverages",
+        "prior_revenue": 42461.2,
+        "current_revenue": 111968.2,
+        "revenue_added": 69506.9,
+        "growth_pct": 163.7,
+        "share_of_growth_pct": 30.1
+      },
+      {
+        "category": "Dairy Products",
+        "prior_revenue": 30155.7,
+        "current_revenue": 77511.1,
+        "revenue_added": 47355.3,
+        "growth_pct": 157.0,
+        "share_of_growth_pct": 20.5
+      },
+      {
+        "category": "Seafood",
+        "prior_revenue": 11354.4,
+        "current_revenue": 43733.0,
+        "revenue_added": 32378.6,
+        "growth_pct": 285.2,
+        "share_of_growth_pct": 14.0
+      },
+      {
+        "category": "Meat/Poultry",
+        "prior_revenue": 24015.8,
+        "current_revenue": 49546.7,
+        "revenue_added": 25531.0,
+        "growth_pct": 106.3,
+        "share_of_growth_pct": 11.1
+      },
+      {
+        "category": "Confections",
+        "prior_revenue": 30855.5,
+        "current_revenue": 52672.5,
+        "revenue_added": 21817.0,
+        "growth_pct": 70.7,
+        "share_of_growth_pct": 9.4
+      },
+      {
+        "category": "Produce",
+        "prior_revenue": 14955.2,
+        "current_revenue": 30020.6,
+        "revenue_added": 15065.5,
+        "growth_pct": 100.7,
+        "share_of_growth_pct": 6.5
+      },
+      {
+        "category": "Condiments",
+        "prior_revenue": 18570.5,
+        "current_revenue": 31892.2,
+        "revenue_added": 13321.7,
+        "growth_pct": 71.7,
+        "share_of_growth_pct": 5.8
+      },
+      {
+        "category": "Grains/Cereals",
+        "prior_revenue": 18953.5,
+        "current_revenue": 24945.8,
+        "revenue_added": 5992.3,
+        "growth_pct": 31.6,
+        "share_of_growth_pct": 2.6
+      }
+    ]
+  },
+  "q2": {
+    "n_customers": 89,
+    "top10pct_count": 9,
+    "top10pct_share": 42.9,
+    "top20pct_count": 18,
+    "top20pct_share": 60.1,
+    "customers_for_80pct": 34,
+    "top3_share": 25.2,
+    "top10_customers": [
+      {
+        "rank": 1,
+        "CompanyName": "QUICK-Stop",
+        "Country": "Germany",
+        "lifetime_revenue": 110277.3,
+        "share_pct": 8.7,
+        "prior_window_revenue": 15585.8,
+        "current_window_revenue": 37217.3,
+        "change_pct": 138.8
+      },
+      {
+        "rank": 2,
+        "CompanyName": "Ernst Handel",
+        "Country": "Austria",
+        "lifetime_revenue": 104875.0,
+        "share_pct": 8.3,
+        "prior_window_revenue": 18883.2,
+        "current_window_revenue": 35992.6,
+        "change_pct": 90.6
+      },
+      {
+        "rank": 3,
+        "CompanyName": "Save-a-lot Markets",
+        "Country": "USA",
+        "lifetime_revenue": 104362.0,
+        "share_pct": 8.2,
+        "prior_window_revenue": 11650.2,
+        "current_window_revenue": 31979.7,
+        "change_pct": 174.5
+      },
+      {
+        "rank": 4,
+        "CompanyName": "Rattlesnake Canyon Grocery",
+        "Country": "USA",
+        "lifetime_revenue": 51097.8,
+        "share_pct": 4.0,
+        "prior_window_revenue": 14364.2,
+        "current_window_revenue": 19982.6,
+        "change_pct": 39.1
+      },
+      {
+        "rank": 5,
+        "CompanyName": "Hungry Owl All-Night Grocers",
+        "Country": "Ireland",
+        "lifetime_revenue": 49979.9,
+        "share_pct": 3.9,
+        "prior_window_revenue": 5870.9,
+        "current_window_revenue": 20402.1,
+        "change_pct": 247.5
+      },
+      {
+        "rank": 6,
+        "CompanyName": "Hanari Carnes",
+        "Country": "Brazil",
+        "lifetime_revenue": 32841.4,
+        "share_pct": 2.6,
+        "prior_window_revenue": 0.0,
+        "current_window_revenue": 23821.2,
+        "change_pct": NaN
+      },
+      {
+        "rank": 7,
+        "CompanyName": "Königlich Essen",
+        "Country": "Germany",
+        "lifetime_revenue": 30908.4,
+        "share_pct": 2.4,
+        "prior_window_revenue": 3275.0,
+        "current_window_revenue": 19582.8,
+        "change_pct": 497.9
+      },
+      {
+        "rank": 8,
+        "CompanyName": "Folk och fä HB",
+        "Country": "Sweden",
+        "lifetime_revenue": 29567.6,
+        "share_pct": 2.3,
+        "prior_window_revenue": 497.2,
+        "current_window_revenue": 13644.1,
+        "change_pct": 2644.1
+      },
+      {
+        "rank": 9,
+        "CompanyName": "Mère Paillarde",
+        "Country": "Canada",
+        "lifetime_revenue": 28872.2,
+        "share_pct": 2.3,
+        "prior_window_revenue": 10420.5,
+        "current_window_revenue": 0.0,
+        "change_pct": -100.0
+      },
+      {
+        "rank": 10,
+        "CompanyName": "White Clover Markets",
+        "Country": "USA",
+        "lifetime_revenue": 27363.6,
+        "share_pct": 2.2,
+        "prior_window_revenue": 3014.0,
+        "current_window_revenue": 14350.2,
+        "change_pct": 376.1
+      }
+    ],
+    "top10_declining": [
+      "Mère Paillarde"
+    ]
+  },
+  "q3": {
+    "lines": 2155,
+    "pct_lines_discounted": 38.9,
+    "avg_units_full_price": 21.7,
+    "avg_units_discounted": 27.1,
+    "avg_units_1_5pct": 27.1,
+    "avg_units_above_5pct": 27.1,
+    "revenue_given_up": 88665.55,
+    "revenue_given_up_pct_of_gross": 6.5,
+    "lines_above_5pct": 646,
+    "given_up_above_5pct": 58483.88,
+    "products_compared": 77,
+    "avg_units_lift_same_product": 4.6,
+    "pct_products_higher_when_discounted": 70.1,
+    "bands": [
+      {
+        "band": "0%",
+        "lines": 1317,
+        "avg_units": 21.7,
+        "median_units": 18.0,
+        "sd_units": 17.5,
+        "ci95_units": 0.9
+      },
+      {
+        "band": "1–5%",
+        "lines": 192,
+        "avg_units": 27.1,
+        "median_units": 20.0,
+        "sd_units": 22.3,
+        "ci95_units": 3.2
+      },
+      {
+        "band": "6–10%",
+        "lines": 174,
+        "avg_units": 25.1,
+        "median_units": 20.0,
+        "sd_units": 21.2,
+        "ci95_units": 3.1
+      },
+      {
+        "band": "11–15%",
+        "lines": 157,
+        "avg_units": 28.4,
+        "median_units": 21.0,
+        "sd_units": 20.9,
+        "ci95_units": 3.3
+      },
+      {
+        "band": "16–20%",
+        "lines": 161,
+        "avg_units": 27.0,
+        "median_units": 21.0,
+        "sd_units": 18.8,
+        "ci95_units": 2.9
+      },
+      {
+        "band": "21–25%",
+        "lines": 154,
+        "avg_units": 28.2,
+        "median_units": 25.0,
+        "sd_units": 20.1,
+        "ci95_units": 3.2
+      }
+    ]
+  },
+  "q5": {
+    "snapshot_date": "1998-05-06",
+    "repeat_customers": 86,
+    "at_risk_count": 5,
+    "at_risk_lifetime_revenue": 56569.07,
+    "at_risk_revenue_1997": 36560.52,
+    "at_risk_share_pct": 4.5,
+    "at_risk_names": [
+      "Blondel père et fils",
+      "Familia Arquibaldo",
+      "Hungry Coyote Import Store",
+      "La corne d'abondance",
+      "Mère Paillarde"
+    ],
+    "watch_count": 4,
+    "watch_lifetime_revenue": 61992.23,
+    "watch_revenue_1997": 40344.28,
+    "flagged": [
+      {
+        "CompanyName": "Mère Paillarde",
+        "Country": "Canada",
+        "orders": 13,
+        "last_order": "1997-10-30",
+        "days_since_last": 188,
+        "avg_gap_days": 31.5,
+        "overdue_ratio": 6.0,
+        "lifetime_revenue": 28872.2,
+        "revenue_1997": 23332.3,
+        "status": "At risk"
+      },
+      {
+        "CompanyName": "Blondel père et fils",
+        "Country": "France",
+        "orders": 11,
+        "last_order": "1998-01-12",
+        "days_since_last": 114,
+        "avg_gap_days": 53.6,
+        "overdue_ratio": 2.1,
+        "lifetime_revenue": 18534.1,
+        "revenue_1997": 7817.9,
+        "status": "At risk"
+      },
+      {
+        "CompanyName": "Familia Arquibaldo",
+        "Country": "Brazil",
+        "orders": 7,
+        "last_order": "1997-10-31",
+        "days_since_last": 187,
+        "avg_gap_days": 59.8,
+        "overdue_ratio": 3.1,
+        "lifetime_revenue": 4107.5,
+        "revenue_1997": 3127.1,
+        "status": "At risk"
+      },
+      {
+        "CompanyName": "Hungry Coyote Import Store",
+        "Country": "USA",
+        "orders": 5,
+        "last_order": "1997-09-08",
+        "days_since_last": 240,
+        "avg_gap_days": 69.0,
+        "overdue_ratio": 3.5,
+        "lifetime_revenue": 3063.2,
+        "revenue_1997": 2283.2,
+        "status": "At risk"
+      },
+      {
+        "CompanyName": "La corne d'abondance",
+        "Country": "France",
+        "orders": 4,
+        "last_order": "1998-03-24",
+        "days_since_last": 43,
+        "avg_gap_days": 18.0,
+        "overdue_ratio": 2.4,
+        "lifetime_revenue": 1992.0,
+        "revenue_1997": 0.0,
+        "status": "At risk"
+      },
+      {
+        "CompanyName": "Berglunds snabbköp",
+        "Country": "Sweden",
+        "orders": 18,
+        "last_order": "1998-03-04",
+        "days_since_last": 63,
+        "avg_gap_days": 33.5,
+        "overdue_ratio": 1.9,
+        "lifetime_revenue": 24927.6,
+        "revenue_1997": 13849.0,
+        "status": "Watch"
+      },
+      {
+        "CompanyName": "Seven Seas Imports",
+        "Country": "UK",
+        "orders": 9,
+        "last_order": "1998-02-04",
+        "days_since_last": 91,
+        "avg_gap_days": 55.0,
+        "overdue_ratio": 1.7,
+        "lifetime_revenue": 16215.3,
+        "revenue_1997": 9021.2,
+        "status": "Watch"
+      },
+      {
+        "CompanyName": "Folies gourmandes",
+        "Country": "France",
+        "orders": 5,
+        "last_order": "1997-12-22",
+        "days_since_last": 135,
+        "avg_gap_days": 87.0,
+        "overdue_ratio": 1.6,
+        "lifetime_revenue": 11666.9,
+        "revenue_1997": 11666.9,
+        "status": "Watch"
+      },
+      {
+        "CompanyName": "Victuailles en stock",
+        "Country": "France",
+        "orders": 10,
+        "last_order": "1998-01-23",
+        "days_since_last": 103,
+        "avg_gap_days": 62.7,
+        "overdue_ratio": 1.6,
+        "lifetime_revenue": 9182.4,
+        "revenue_1997": 5807.1,
+        "status": "Watch"
+      }
+    ]
+  },
+  "verification": {
+    "all_match": true,
+    "metrics": 15
+  }
+}

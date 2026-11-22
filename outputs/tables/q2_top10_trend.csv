@@ -1,0 +1,11 @@
+rank,CustomerID,CompanyName,Country,lifetime_revenue,share_pct,prior_window_revenue,current_window_revenue,change_pct
+1,QUICK,QUICK-Stop,Germany,110277.3,8.71,15585.76,37217.32,138.79
+2,ERNSH,Ernst Handel,Austria,104874.98,8.29,18883.16,35992.65,90.61
+3,SAVEA,Save-a-lot Markets,USA,104361.95,8.24,11650.18,31979.71,174.5
+4,RATTC,Rattlesnake Canyon Grocery,USA,51097.8,4.04,14364.2,19982.55,39.11
+5,HUNGO,Hungry Owl All-Night Grocers,Ireland,49979.9,3.95,5870.92,20402.12,247.51
+6,HANAR,Hanari Carnes,Brazil,32841.37,2.59,0.0,23821.2,
+7,KOENE,Königlich Essen,Germany,30908.38,2.44,3275.0,19582.77,497.95
+8,FOLKO,Folk och fä HB,Sweden,29567.56,2.34,497.22,13644.07,2644.07
+9,MEREP,Mère Paillarde,Canada,28872.19,2.28,10420.46,0.0,-100.0
+10,WHITC,White Clover Markets,USA,27363.6,2.16,3013.98,14350.15,376.12

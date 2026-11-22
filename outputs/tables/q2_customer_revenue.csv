@@ -1,0 +1,90 @@
+CustomerID,CompanyName,Country,orders,net_revenue,share_pct,cumulative_share_pct,rank
+QUICK,QUICK-Stop,Germany,28,110277.3,8.71,8.71,1
+ERNSH,Ernst Handel,Austria,30,104874.98,8.29,17.0,2
+SAVEA,Save-a-lot Markets,USA,31,104361.95,8.24,25.24,3
+RATTC,Rattlesnake Canyon Grocery,USA,18,51097.8,4.04,29.28,4
+HUNGO,Hungry Owl All-Night Grocers,Ireland,19,49979.9,3.95,33.23,5
+HANAR,Hanari Carnes,Brazil,14,32841.37,2.59,35.82,6
+KOENE,Königlich Essen,Germany,14,30908.38,2.44,38.26,7
+FOLKO,Folk och fä HB,Sweden,19,29567.56,2.34,40.6,8
+MEREP,Mère Paillarde,Canada,13,28872.19,2.28,42.88,9
+WHITC,White Clover Markets,USA,14,27363.6,2.16,45.04,10
+FRANK,Frankenversand,Germany,15,26656.56,2.11,47.15,11
+QUEEN,Queen Cozinha,Brazil,13,25717.5,2.03,49.18,12
+BERGS,Berglunds snabbköp,Sweden,18,24927.58,1.97,51.15,13
+SUPRD,Suprêmes délices,Belgium,12,24088.78,1.9,53.05,14
+PICCO,Piccolo und mehr,Austria,10,23128.86,1.83,54.88,15
+HILAA,HILARIÓN-Abastos,Venezuela,18,22768.76,1.8,56.68,16
+BONAP,Bon app',France,17,21963.25,1.74,58.41,17
+BOTTM,Bottom-Dollar Markets,Canada,14,20801.6,1.64,60.06,18
+RICSU,Richter Supermarkt,Switzerland,10,19343.78,1.53,61.59,19
+LEHMS,Lehmanns Marktstand,Germany,15,19261.41,1.52,63.11,20
+BLONP,Blondel père et fils,France,11,18534.08,1.46,64.57,21
+GREAL,Great Lakes Food Market,USA,11,18507.45,1.46,66.03,22
+SIMOB,Simons bistro,Denmark,7,16817.1,1.33,67.36,23
+LINOD,LINO-Delicateses,Venezuela,12,16476.56,1.3,68.66,24
+SEVES,Seven Seas Imports,UK,9,16215.32,1.28,69.94,25
+LILAS,LILA-Supermercado,Venezuela,14,16076.6,1.27,71.21,26
+VAFFE,Vaffeljernet,Denmark,11,15843.92,1.25,72.47,27
+WARTH,Wartian Herkku,Finland,15,15648.7,1.24,73.7,28
+OLDWO,Old World Delicatessen,USA,10,15271.11,1.21,74.91,29
+EASTC,Eastern Connection,UK,8,14761.04,1.17,76.08,30
+AROUT,Around the Horn,UK,13,13390.65,1.06,77.13,31
+RICAR,Ricardo Adocicados,Brazil,11,12450.8,0.98,78.12,32
+CHOPS,Chop-suey Chinese,Switzerland,8,12348.88,0.98,79.09,33
+FOLIG,Folies gourmandes,France,5,11666.9,0.92,80.01,34
+GODOS,Godos Cocina Típica,Spain,10,11446.36,0.9,80.92,35
+SPLIR,Split Rail Beer & Ale,USA,9,11441.63,0.9,81.82,36
+OTTIK,Ottilies Käseladen,Germany,9,10991.55,0.87,82.69,37
+TORTU,Tortuga Restaurante,Mexico,10,10812.15,0.85,83.54,38
+MAISD,Maison Dewey,Belgium,7,9736.08,0.77,84.31,39
+WANDK,Die Wandernde Kuh,Germany,10,9588.42,0.76,85.07,40
+LAMAI,La maison d'Asie,France,14,9328.2,0.74,85.81,41
+VICTE,Victuailles en stock,France,10,9182.43,0.73,86.53,42
+TRADH,Tradição Hipermercados,Brazil,7,8714.06,0.69,87.22,43
+GOURL,Gourmet Lanchonetes,Brazil,9,8414.14,0.66,87.89,44
+MAGAA,Magazzini Alimentari Riuniti,Italy,10,7176.22,0.57,88.45,45
+REGGC,Reggiani Caseifici,Italy,12,7048.24,0.56,89.01,46
+ANTON,Antonio Moreno Taquería,Mexico,7,7023.98,0.55,89.57,47
+QUEDE,Que Delícia,Brazil,9,6664.81,0.53,90.09,48
+PRINI,Princesa Isabel Vinhos,Portugal,6,6455.94,0.51,90.6,49
+FURIB,Furia Bacalhau e Frutos do Mar,Portugal,8,6427.42,0.51,91.11,50
+ISLAT,Island Trading,UK,10,6146.3,0.49,91.6,51
+BSBEV,B's Beverages,UK,10,6089.9,0.48,92.08,52
+WELLI,Wellington Importadora,Brazil,9,6068.2,0.48,92.56,53
+SANTG,Santé Gourmet,Norway,6,5735.15,0.45,93.01,54
+MORGK,Morgenstern Gesundkost,Germany,5,5042.2,0.4,93.41,55
+ALFKI,Alfreds Futterkiste,Germany,6,4273.0,0.34,93.75,56
+LONEP,Lonesome Pine Restaurant,USA,8,4258.6,0.34,94.08,57
+PERIC,Pericles Comidas clásicas,Mexico,6,4242.2,0.34,94.42,58
+BOLID,Bólido Comidas preparadas,Spain,3,4232.85,0.33,94.75,59
+FAMIA,Familia Arquibaldo,Brazil,7,4107.55,0.32,95.08,60
+COMMI,Comércio Mineiro,Brazil,5,3810.75,0.3,95.38,61
+DRACD,Drachenblut Delikatessen,Germany,6,3763.21,0.3,95.67,62
+WILMK,Wilman Kala,Finland,8,3601.35,0.28,95.96,63
+WOLZA,Wolski  Zajazd,Poland,7,3531.95,0.28,96.24,64
+OCEAN,Océano Atlántico Ltda.,Argentina,5,3460.2,0.27,96.51,65
+THEBI,The Big Cheese,USA,4,3361.0,0.27,96.78,66
+BLAUS,Blauer See Delikatessen,Germany,7,3239.8,0.26,97.03,67
+FRANR,France restauration,France,3,3172.16,0.25,97.28,68
+LETSS,Let's Stop N Shop,USA,4,3076.47,0.24,97.53,69
+HUNGC,Hungry Coyote Import Store,USA,5,3063.2,0.24,97.77,70
+TOMSP,Toms Spezialitäten,Germany,5,2914.74,0.23,98.0,71
+RANCH,Rancho grande,Argentina,5,2844.1,0.22,98.22,72
+SPECD,Spécialités du monde,France,4,2423.35,0.19,98.41,73
+LACOR,La corne d'abondance,France,4,1992.05,0.16,98.57,74
+THECR,The Cracker Box,USA,3,1947.24,0.15,98.73,75
+CACTU,Cactus Comidas para llevar,Argentina,6,1814.8,0.14,98.87,76
+CONSH,Consolidated Holdings,UK,3,1719.1,0.14,99.0,77
+DUMON,Du monde entier,France,4,1615.9,0.13,99.13,78
+TRAIH,Trail's Head Gourmet Provisioners,USA,3,1571.2,0.12,99.26,79
+FRANS,Franchi S.p.A.,Italy,6,1545.7,0.12,99.38,80
+GROSR,GROSELLA-Restaurante,Venezuela,2,1488.7,0.12,99.5,81
+ROMEY,Romero y tomillo,Spain,5,1467.29,0.12,99.61,82
+ANATR,Ana Trujillo Emparedados y helados,Mexico,4,1402.95,0.11,99.72,83
+VINET,Vins et alcools Chevalier,France,4,1040.0,0.08,99.81,84
+GALED,Galería del gastrónomo,Spain,5,836.7,0.07,99.87,85
+NORTS,North/South,UK,3,649.0,0.05,99.92,86
+LAUGB,Laughing Bacchus Wine Cellars,Canada,3,522.5,0.04,99.96,87
+LAZYK,Lazy K Kountry Store,USA,2,357.0,0.03,99.99,88
+CENTC,Centro comercial Moctezuma,Mexico,1,100.8,0.01,100.0,89
