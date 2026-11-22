@@ -22,7 +22,8 @@ original list of candidate questions.
 
 ## Reproduce
 
-Requires Python 3.10+ (tested on 3.13).
+Requires Python 3.12+ (tested on 3.13). The pinned numpy version does not
+install on older Pythons.
 
 ```bash
 python -m venv .venv
@@ -44,8 +45,34 @@ python src/run_all.py
 5. Saves everything to `outputs/results.json`, copies the charts to
    `docs/figures/`, and prints the findings.
 
-Each question script can also be run on its own, e.g.
-`python src/q1_growth.py`.
+### Running the scripts one at a time
+
+Instead of `run_all.py`, you can run the scripts individually from the
+project folder, in this order:
+
+| Order | Command | Produces |
+|---|---|---|
+| 1 | `python src/load_data.py` | `data/*.csv` (8 tables, re-downloaded) |
+| 2 | `python src/q1_growth.py` | `outputs/figures/q1_growth.png`, `outputs/tables/q1_monthly_revenue.csv`, `outputs/tables/q1_category_growth.csv` |
+| 3 | `python src/q2_concentration.py` | `outputs/figures/q2_pareto.png`, `outputs/figures/q2_top10_trend.png`, `outputs/tables/q2_customer_revenue.csv`, `outputs/tables/q2_top10_trend.csv` |
+| 4 | `python src/q3_discounts.py` | `outputs/figures/q3_discounts.png`, `outputs/tables/q3_discount_bands.csv` |
+| 5 | `python src/q5_at_risk.py` | `outputs/figures/q5_at_risk.png`, `outputs/tables/q5_customer_recency.csv` |
+
+The first question script also builds `data/northwind.db` if it doesn't
+exist. Each script prints its key numbers. Only `run_all.py` runs the
+verification, writes `outputs/results.json`, and copies the charts to
+`docs/figures/` for the webpage.
+
+### Where the data goes
+
+You don't need to download anything by hand: the scripts fetch the data from
+the public Google Sheet. To work offline, or with your own copy of
+Northwind, put these 8 CSV files in `data/` before running:
+`categories.csv`, `customers.csv`, `employees.csv`, `order_details.csv`,
+`orders.csv`, `products.csv`, `shippers.csv`, `suppliers.csv`. The columns
+must match the Google Sheet's. The repository already includes them, so a
+fresh clone works offline. If you replace the CSVs, delete
+`data/northwind.db` so it gets rebuilt.
 
 ## Project structure
 
