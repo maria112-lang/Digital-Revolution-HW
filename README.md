@@ -1,9 +1,10 @@
 # Northwind Traders: Business Data Analysis
 
-AI-assisted analysis of the Northwind sample database for 15.561 (Digital
-Revolution). Four business questions for a sales or general manager, each
-answered with reproducible Python code, a chart, a finding, and a
-recommendation.
+Business analysis of the Northwind sample database for 15.561 (Digital
+Revolution) by Maria Alejandra Garcia. It answers four questions for a sales
+or general manager, each with a chart, a finding, and a recommendation. The
+results are reproducible with Python code, which was written with help from
+an AI coding assistant.
 
 **Webpage:** [`docs/index.html`](docs/index.html), published with GitHub Pages
 at <https://maria112-lang.github.io/Digital-Revolution-HW/>
@@ -104,5 +105,5 @@ docstring has one line per parameter and a `Returns:` section.
 
 ## Tools
 
-Python only: pandas, matplotlib, sqlite3 (standard library). Built with an
-AI coding agent (Claude Code).
+Python only: pandas, matplotlib, sqlite3 (standard library). An AI coding
+assistant (Claude Code) helped with data processing, code, and charts.
