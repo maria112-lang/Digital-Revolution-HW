@@ -125,6 +125,7 @@
       font-size: 0.88em; background: var(--accent-soft);
       padding: 1px 5px; border-radius: 4px;
     }
+    code.formula { white-space: nowrap; }
     @media (max-width: 600px) {
       body { font-size: 16px; }
       main { padding-top: 32px; }
@@ -164,7 +165,7 @@
         <li><a href="#q3">A 1–5% discount sells as many units as a 25%
           discount.</a> Discounts above 5% gave away $58K with no extra
           volume.</li>
-        <li><a href="#q5">Nine repeat customers are overdue</a> for their
+        <li><a href="#q4">Nine repeat customers are overdue</a> for their
           next order. Together they spent $77K in 1997.</li>
       </ol>
     </div>
@@ -259,7 +260,7 @@
         reviews, and priority allocation of fast-growing stock. Any one of
         them leaving would cost about 8% of revenue. <strong>Call Mère
         Paillarde this week</strong> to find out why they stopped ordering
-        (see Q5).</p>
+        (see Q4).</p>
     </div>
   </section>
 
@@ -329,8 +330,8 @@
     </div>
   </section>
 
-  <!-- Q5 -->
-  <section class="q" id="q5">
+  <!-- Q4 -->
+  <section class="q" id="q4">
     <span class="qnum">Q4</span>
     <h2>Which customers are we at risk of losing?</h2>
 
@@ -403,8 +404,8 @@
   <section class="method" id="method">
     <h2>Method, data quality and reproducibility</h2>
     <ul class="tight">
-      <li><strong>Revenue</strong> = <code>UnitPrice × Quantity × (1 −
-        Discount)</code> per order line. It uses the price actually charged
+      <li><strong>Revenue</strong> = <code class="formula">UnitPrice × Quantity × (1 − Discount)</code>
+        per order line. It uses the price actually charged
         on each order, not today's list price, and excludes freight.</li>
       <li><strong>Cleaning:</strong> one freight value stored as text
         (<code>"1,007.64"</code>) was converted to a number, and discount
@@ -416,9 +417,10 @@
         independently with pandas on the raw data. All 15 match.</li>
       <li><strong>Reproduce:</strong> all code is Python, in the
         <a href="https://github.com/maria112-lang/Digital-Revolution-HW">GitHub
-        repository</a>. <code>python src/run_all.py</code> downloads the
-        data, rebuilds every chart and table, and runs the
-        verification.</li>
+        repository</a>, together with a copy of the data, so results can be
+        reproduced even without internet access.
+        <code>python src/run_all.py</code> rebuilds every chart and table and
+        runs the verification.</li>
     </ul>
   </section>
 
