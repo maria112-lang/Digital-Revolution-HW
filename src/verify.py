@@ -100,9 +100,9 @@ def pandas_metrics(tables, current_year, through_month):
     at_risk = hist.index[(hist["count"] >= 3) & (ratio > 2)]
     names = tables["customers"].set_index("CustomerID")["CompanyName"]
     m.update({
-        "q5_at_risk_count": len(at_risk),
-        "q5_at_risk_lifetime_revenue": by_cust[at_risk].sum(),
-        "q5_at_risk_names": sorted(names[at_risk]),
+        "q4_at_risk_count": len(at_risk),
+        "q4_at_risk_lifetime_revenue": by_cust[at_risk].sum(),
+        "q4_at_risk_names": sorted(names[at_risk]),
     })
     return m
 
@@ -112,13 +112,13 @@ def sql_metrics(results):
 
     Args:
         results (dict): Question results keyed ``q1``, ``q2``, ``q3``,
-            and ``q5``, from each module's ``run``.
+            and ``q4``, from each module's ``run``.
 
     Returns:
         dict: Metric values as reported (mostly rounded), keyed like
         ``pandas_metrics``.
     """
-    q1, q2, q3, q5 = (results[k] for k in ("q1", "q2", "q3", "q5"))
+    q1, q2, q3, q4 = (results[k] for k in ("q1", "q2", "q3", "q4"))
     bev = next(r for r in q1["by_category"] if r["category"] == "Beverages")
     total = query("SELECT SUM(net_revenue) AS t FROM order_lines")["t"][0]
     return {
@@ -134,9 +134,9 @@ def sql_metrics(results):
         "q3_avg_units_discounted": q3["avg_units_discounted"],
         "q3_revenue_given_up": q3["revenue_given_up"],
         "q3_given_up_above_5pct": q3["given_up_above_5pct"],
-        "q5_at_risk_count": q5["at_risk_count"],
-        "q5_at_risk_lifetime_revenue": q5["at_risk_lifetime_revenue"],
-        "q5_at_risk_names": q5["at_risk_names"],
+        "q4_at_risk_count": q4["at_risk_count"],
+        "q4_at_risk_lifetime_revenue": q4["at_risk_lifetime_revenue"],
+        "q4_at_risk_names": q4["at_risk_names"],
     }
 
 
@@ -163,7 +163,7 @@ def compare(results):
 
     Args:
         results (dict): Question results keyed ``q1``, ``q2``, ``q3``,
-            and ``q5``.
+            and ``q4``.
 
     Returns:
         pandas.DataFrame: One row per metric with ``metric``, ``sql``,

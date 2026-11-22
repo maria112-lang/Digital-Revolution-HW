@@ -1,6 +1,6 @@
-"""Q5: which repeat customers are overdue for their next order.
+"""Q4: which repeat customers are overdue for their next order.
 
-Run directly to save the Q5 chart and table to ``outputs/``.
+Run directly to save the Q4 chart and table to ``outputs/``.
 """
 
 import matplotlib.pyplot as plt
@@ -92,7 +92,7 @@ def plot(df):
         df (pandas.DataFrame): Output of ``classify``.
 
     Returns:
-        pathlib.Path: Path of the saved ``q5_at_risk.png``.
+        pathlib.Path: Path of the saved ``q4_at_risk.png``.
     """
     rated = df[df["orders"] >= MIN_ORDERS]
     fig, ax = plt.subplots(figsize=(9, 5))
@@ -128,11 +128,11 @@ def plot(df):
     ax.grid(alpha=0.3)
     despine(ax)
     fig.tight_layout()
-    return save_figure(fig, "q5_at_risk.png")
+    return save_figure(fig, "q4_at_risk.png")
 
 
 def run():
-    """Run Q5 and save its chart and table.
+    """Run Q4 and save its chart and table.
 
     Args:
         None.
@@ -146,7 +146,7 @@ def run():
     out = df.drop(columns=["snapshot_date"]).copy()
     for col in ("first_order", "last_order"):
         out[col] = out[col].dt.strftime("%Y-%m-%d")
-    save_table(out.round(2), "q5_customer_recency.csv")
+    save_table(out.round(2), "q4_customer_recency.csv")
     plot(df)
 
     total = df["lifetime_revenue"].sum()

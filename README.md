@@ -16,10 +16,6 @@ at <https://maria112-lang.github.io/Digital-Revolution-HW/>
 | 2 | How dependent are we on a few customers? | The top 20% of customers (18 of 89) bring in **60.1%** of revenue, and the top 3 bring in **25.2%**. Mère Paillarde (#9) has placed no orders in 1998. |
 | 3 | Do discounts sell more, or just give away revenue? | A 1–5% discount sells as many units as deeper ones (**27.1** units per line either way). Discounts above 5% gave away **$58,484**. |
 | 4 | Which customers are we at risk of losing? | **5** repeat customers are at risk and **4** are on a watch list, about **$77K** of 1997 revenue. |
-
-The scripts for question 4 are named `q5_*` because it was question 5 in the
-original list of candidate questions.
-
 ## Reproduce
 
 Requires Python 3.12+ (tested on 3.13). The pinned numpy version does not
@@ -56,7 +52,7 @@ project folder, in this order:
 | 2 | `python src/q1_growth.py` | `outputs/figures/q1_growth.png`, `outputs/tables/q1_monthly_revenue.csv`, `outputs/tables/q1_category_growth.csv` |
 | 3 | `python src/q2_concentration.py` | `outputs/figures/q2_pareto.png`, `outputs/figures/q2_top10_trend.png`, `outputs/tables/q2_customer_revenue.csv`, `outputs/tables/q2_top10_trend.csv` |
 | 4 | `python src/q3_discounts.py` | `outputs/figures/q3_discounts.png`, `outputs/tables/q3_discount_bands.csv` |
-| 5 | `python src/q5_at_risk.py` | `outputs/figures/q5_at_risk.png`, `outputs/tables/q5_customer_recency.csv` |
+| 5 | `python src/q4_at_risk.py` | `outputs/figures/q4_at_risk.png`, `outputs/tables/q4_customer_recency.csv` |
 
 The first question script also builds `data/northwind.db` if it doesn't
 exist. Each script prints its key numbers. Only `run_all.py` runs the
@@ -84,7 +80,7 @@ src/
   q1_growth.py         Q1: revenue trend and growth by category
   q2_concentration.py  Q2: customer concentration and top-10 trend
   q3_discounts.py      Q3: discount level vs units sold, revenue given up
-  q5_at_risk.py        Q4 (originally Q5): overdue repeat customers
+  q4_at_risk.py        Q4: overdue repeat customers
   verify.py            Recompute the key numbers with pandas only
   run_all.py           Run everything and print the findings
 outputs/

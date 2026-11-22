@@ -12,7 +12,7 @@ from pathlib import Path
 import q1_growth
 import q2_concentration
 import q3_discounts
-import q5_at_risk
+import q4_at_risk
 import verify
 from db import FIG_DIR, ROOT, build_database
 
@@ -51,12 +51,12 @@ def print_findings(r):
     """Print the main findings for each question.
 
     Args:
-        r (dict): Results keyed ``q1``, ``q2``, ``q3``, and ``q5``.
+        r (dict): Results keyed ``q1``, ``q2``, ``q3``, and ``q4``.
 
     Returns:
         None. Writes to standard output.
     """
-    q1, q2, q3, q5 = r["q1"], r["q2"], r["q3"], r["q5"]
+    q1, q2, q3, q4 = r["q1"], r["q2"], r["q3"], r["q4"]
     print("\n=== Q1. Where is growth coming from? ===")
     print(f"{q1['window']}: {money(q1['prior_revenue'])} -> "
           f"{money(q1['current_revenue'])} "
@@ -97,13 +97,13 @@ def print_findings(r):
           f"{money(q3['given_up_above_5pct'])} of it is the part above 5% "
           f"on {q3['lines_above_5pct']} lines.")
 
-    print("\n=== Q5. Which customers are at risk? ===")
-    print(f"As of {q5['snapshot_date']}: {q5['at_risk_count']} at risk "
-          f"({money(q5['at_risk_lifetime_revenue'])} lifetime, "
-          f"{money(q5['at_risk_revenue_1997'])} in 1997), "
-          f"{q5['watch_count']} on watch "
-          f"({money(q5['watch_revenue_1997'])} in 1997).")
-    for c in q5["flagged"]:
+    print("\n=== Q4. Which customers are at risk? ===")
+    print(f"As of {q4['snapshot_date']}: {q4['at_risk_count']} at risk "
+          f"({money(q4['at_risk_lifetime_revenue'])} lifetime, "
+          f"{money(q4['at_risk_revenue_1997'])} in 1997), "
+          f"{q4['watch_count']} on watch "
+          f"({money(q4['watch_revenue_1997'])} in 1997).")
+    for c in q4["flagged"]:
         print(f"  {c['status']:<8} {c['CompanyName']:<32} "
               f"{c['days_since_last']:>4} days since last order "
               f"(usual gap {c['avg_gap_days']:.0f}, "
@@ -138,7 +138,7 @@ def main():
         None.
 
     Returns:
-        dict: Results for ``q1``, ``q2``, ``q3``, and ``q5`` plus a
+        dict: Results for ``q1``, ``q2``, ``q3``, and ``q4`` plus a
         ``verification`` summary.
     """
     if hasattr(sys.stdout, "reconfigure"):
@@ -148,7 +148,7 @@ def main():
         "q1": q1_growth.run(),
         "q2": q2_concentration.run(),
         "q3": q3_discounts.run(),
-        "q5": q5_at_risk.run(),
+        "q4": q4_at_risk.run(),
     }
     check = verify.compare(results)
     results["verification"] = {
